@@ -1,3 +1,5 @@
+![](vanillajs.png)
+
 # JavaScript Vanilla
 
 [JavaScript Puro](http://vanilla-js.com/).
