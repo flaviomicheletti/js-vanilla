@@ -1,7 +1,14 @@
-import update from './update.js';
 
-// even though Rollup is bundling all your files together, errors and
-// logs will still point to your original source modules
-console.log('if you have sourcemaps enabled in your devtools, click on main.js:5 -->');
+// https://jsonplaceholder.typicode.com/
 
-update();
+fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(todos => {
+        // console.log(todos);
+        todos.forEach(function (item, indice) {
+            console.log(item, indice);
+        });
+    })
+    .catch(error => {
+        console.warn('Failed!', error);
+    });
