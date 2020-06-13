@@ -1,4 +1,4 @@
-![](vanillajs.png)
+![vanillajs](https://user-images.githubusercontent.com/1257048/84575349-cfb01a80-ad82-11ea-8469-1fbf13d376b4.png)
 
 # JavaScript Vanilla
 
