@@ -1,5 +1,9 @@
 // https://jsonplaceholder.typicode.com/
 
+var bar = require("./foo.js");
+
+bar();
+
 fetch('https://jsonplaceholder.typicode.com/todos')
     .then(response => response.json())
     .then(todos => {
