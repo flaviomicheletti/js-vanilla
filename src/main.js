@@ -1,8 +1,8 @@
+// API
+// teste no terminal
+// curl -X GET -i https://jsonplaceholder.typicode.com/todos
+//
 // https://jsonplaceholder.typicode.com/
-
-var bar = require("./foo.js");
-
-bar();
 
 fetch('https://jsonplaceholder.typicode.com/todos')
     .then(response => response.json())
