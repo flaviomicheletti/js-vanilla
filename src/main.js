@@ -1,4 +1,4 @@
 // const bar = require("./foo.js");
 // bar();
 
- require("./foo1.js");
+ require("./foo2.js");
