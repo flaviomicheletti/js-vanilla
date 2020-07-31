@@ -9,7 +9,7 @@ fetch('https://jsonplaceholder.typicode.com/todos')
     .then(todos => {
         // console.log(todos);
         todos.forEach(function (item, indice) {
-            //console.log(item, indice);
+            // console.log(item.title);
             addItem(divMain, createElem(item.title)); 
         });
     })
