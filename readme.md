@@ -34,3 +34,8 @@ Para "baixar" as tags execute:
 Caso esteja com problema de CORS no Firefox
 
 https://gist.github.com/flaviomicheletti/62f2deb4a577b4330909d274306c498c
+
+
+### Utilizando Bootstrap 5
+
+https://v5.getbootstrap.com/
