@@ -7,7 +7,7 @@
 // const bar = require("./foo.js");
 // bar();
 
-const { exemplo2, exemplo3 } = require("./handlers.js");
+const { handler1, handler2, handler3 } = require("./handlers.js");
 
 
 fetch('https://jsonplaceholder.typicode.com/todos')
@@ -19,18 +19,11 @@ fetch('https://jsonplaceholder.typicode.com/todos')
             addItem(divMain, createElem(item.title));
         });
 
-        //
-        // http://www.java2s.com/Tutorials/Javascript/Javascript_Element_How_to/Table_Row/Handle_click_event_for_table_row_tr.htm
-        //
-        // const rows = document.getElementsByTagName("p");
-        // for (let i = 0; i < rows.length; i++) {
-        //     rows[i].onclick = function () {
-        //         console.log(this.textContent);
-        //     };
-        // }
-        exemplo3(divMain, function (row) {
-            console.log(row);
-        });
+        handler1(divMain);
+        // handler2(divMain);
+        // handler3(divMain, function (row) {
+        //     console.log(row);
+        // });
 
     })
     .catch(error => {

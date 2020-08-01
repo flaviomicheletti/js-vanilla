@@ -1,12 +1,26 @@
 //
-// Outros exemplos
+// 3 exemplos de handlers, escolha um !
 //
+
+
+//
+// http://www.java2s.com/Tutorials/Javascript/Javascript_Element_How_to/Table_Row/Handle_click_event_for_table_row_tr.htm
+//
+function handler1(parent) {
+    const rows = parent.getElementsByTagName("p");
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].onclick = function () {
+            console.log(this.textContent);
+        };
+    }
+}
+
 
 // https://stackoverflow.com/questions/1207939/adding-an-onclick-event-to-a-table-row
 //
 // exemplo2(divMain);
 //
-function exemplo2(parent) {
+function handler2(parent) {
     const rows = parent.getElementsByTagName("p");
 
     // for (let i = 0; i < rows.length; i++) {
@@ -55,7 +69,7 @@ function exemplo2(parent) {
 // exemplo3(divMain, function (row) {
 //     console.log(row);
 // });
-function exemplo3(parent, callback) {
+function handler3(parent, callback) {
     const rows = parent.getElementsByTagName("p");
 
     for (let i = 0; i < rows.length; i++) {
@@ -71,4 +85,4 @@ function exemplo3(parent, callback) {
 //
 //
 //
-export { exemplo2, exemplo3 };
+export { handler1, handler2, handler3 };
