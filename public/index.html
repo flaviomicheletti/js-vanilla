@@ -1,27 +1,41 @@
 <!doctype html>
 <html>
 
-<head lang='en'>
+  <head lang='en'>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width'>
     <link rel="shortcut icon" type="images/gif" href="/favicon.ico">
     <title>JavaScript Vanilla</title>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <style>
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            color: #333;
-            font-weight: 300;
-        }
+      body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        color: #333;
+        font-weight: 300;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
 
-    <div id="main"></div>
-    
+    <div id="main">
+
+      <table class="table" >
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+          </tr>
+        </thead>
+        <tbody id="mytable">
+        </tbody>
+      </table>
+
+    </div>
+
     <script src='bundle.js'></script>
 
-</body>
+  </body>
 
 </html>

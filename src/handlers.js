@@ -7,7 +7,7 @@
 // http://www.java2s.com/Tutorials/Javascript/Javascript_Element_How_to/Table_Row/Handle_click_event_for_table_row_tr.htm
 //
 function handler1(parent) {
-    const rows = parent.getElementsByTagName("p");
+    const rows = parent.getElementsByTagName("tr");
     for (let i = 0; i < rows.length; i++) {
         rows[i].onclick = function () {
             console.log(this.textContent);
