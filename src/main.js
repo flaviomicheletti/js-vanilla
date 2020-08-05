@@ -9,17 +9,16 @@
 
 const { handler1, handler2, handler3 } = require("./handlers.js");
 
-
 fetch('https://jsonplaceholder.typicode.com/todos')
     .then(response => response.json())
     .then(todos => {
         // console.log(todos);
         todos.forEach(function (item, indice) {
             // console.log(item.title);
-            addItem(container, createElem(item));
+            addItem(tbody, createElem(item));
         });
 
-        handler1(container);
+        // handler1(tbody);
         // handler2(divMain);
         // handler3(divMain, function (row) {
         //     console.log(row);
@@ -30,7 +29,24 @@ fetch('https://jsonplaceholder.typicode.com/todos')
         console.warn('Failed!', error);
     });
 
-let container = document.getElementById('mytable');
+let main = document.getElementById('main');
+
+main.innerHTML = `<table class="table" id="mytable">
+<thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+  </tr>
+</thead>
+<tbody>
+</tbody>
+</table>`
+
+
+let table = document.getElementById('mytable');
+let tbody = table.children[1];
+// console.log(table.children[1]);
+
 
 function createElem(item) {
     let elem = document.createElement("tr");
