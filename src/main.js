@@ -36,15 +36,14 @@ target.innerHTML = `<table class="table" id="mytable">
 </thead>
 <tbody>
 </tbody>
-</table>`
+</table>`;
 
-
-let table = document.getElementById('mytable');
+let table = document.getElementById("mytable");
 let tbody = table.children[1];
 
 function createElem(item) {
-    let elem = document.createElement("tr");
-    elem.innerHTML = `<th scope="row">${item.id}</th>
+  let elem = document.createElement("tr");
+  elem.innerHTML = `<td scope="row">${item.id}</th>
         <td>${item.title}</td>`;
     elem.setAttributeNode(createAttr("data-id", item.id));
     return elem;
@@ -57,7 +56,7 @@ function createAttr(name, value) {
 }
 
 function addItem(elemParent, elemChild) {
-    elemParent.appendChild(elemChild);
+  elemParent.appendChild(elemChild);
 }
 
 function handler(parent, callback) {
