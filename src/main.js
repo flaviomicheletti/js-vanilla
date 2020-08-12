@@ -7,30 +7,27 @@
 // const bar = require("./foo.js");
 // bar();
 
-const { handler1, handler2, handler3 } = require("./handlers.js");
+fetch('https://jsonplaceholder.typicode.com/todos')
+    .then(response => response.json())
+    .then(todos => {
+        // console.log(todos);
+        todos.forEach(function (item, indice) {
+            // console.log(item.title);
+            addItem(tbody, createElem(item));
+        });
 
-fetch("https://jsonplaceholder.typicode.com/todos")
-  .then((response) => response.json())
-  .then((todos) => {
-    // console.log(todos);
-    todos.forEach(function (item, indice) {
-      // console.log(item.title);
-      addItem(tbody, createElem(item));
+        handler(tbody, function (item) {
+            console.log(item.dataset.id);
+        });
+
+    })
+    .catch(error => {
+        console.warn('Failed!', error);
     });
 
-    // handler1(tbody);
-    // handler2(divMain);
-    // handler3(divMain, function (row) {
-    //     console.log(row);
-    // });
-  })
-  .catch((error) => {
-    console.warn("Failed!", error);
-  });
+let target = document.getElementById('target');
 
-let main = document.getElementById("main");
-
-main.innerHTML = `<table class="table" id="mytable">
+target.innerHTML = `<table class="table" id="mytable">
 <thead>
   <tr>
     <th scope="col">#</th>
@@ -43,15 +40,30 @@ main.innerHTML = `<table class="table" id="mytable">
 
 let table = document.getElementById("mytable");
 let tbody = table.children[1];
-// console.log(table.children[1]);
 
 function createElem(item) {
   let elem = document.createElement("tr");
   elem.innerHTML = `<td scope="row">${item.id}</th>
         <td>${item.title}</td>`;
-  return elem;
+    elem.setAttributeNode(createAttr("data-id", item.id));
+    return elem;
+}
+
+function createAttr(name, value) {
+    var attr = document.createAttribute(name);
+    attr.value = value;
+    return attr;
 }
 
 function addItem(elemParent, elemChild) {
   elemParent.appendChild(elemChild);
+}
+
+function handler(parent, callback) {
+    const rows = parent.getElementsByTagName("tr");
+    for (let i = 0; i < rows.length; i++) {
+        rows[i].onclick = function () {
+            callback(rows[i])
+        };
+    }
 }
