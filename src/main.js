@@ -7,27 +7,41 @@
 // const bar = require("./foo.js");
 // bar();
 
-fetch('https://jsonplaceholder.typicode.com/todos')
-    .then(response => response.json())
-    .then(todos => {
-        // console.log(todos);
-        todos.forEach(function (item, indice) {
-            // console.log(item.title);
-            addItem(tbody, createElem(item));
-        });
-
-        handler(tbody, function (item) {
-            console.log(item.dataset.id);
-        });
-
-    })
-    .catch(error => {
-        console.warn('Failed!', error);
+fetch("https://jsonplaceholder.typicode.com/todos")
+  .then((response) => response.json())
+  .then((todos) => {
+    // console.log(todos);
+    todos.forEach(function (item, indice) {
+      // console.log(item.title);
+      //   addItem(tbody, createElem(item));
+      tbody.appendChild(createElem(item));
     });
 
-let target = document.getElementById('target');
+    handler(tbody, function (item) {
+      //   console.log(item.dataset.id);
+      fetch("https://jsonplaceholder.typicode.com/todos/" + item.dataset.id)
+        .then((response) => response.json())
+        .then((todo) => {
+          console.log(todo);
+          let eTitle = document.getElementById("title");
+          let eUserId = document.getElementById("userId");
+          let eCompleted = document.getElementById("completed");
 
-target.innerHTML = `<table class="table" id="mytable">
+          eTitle.value = todo.title;
+          eUserId.value = todo.userId;
+          eCompleted.checked = todo.completed;
+        })
+        .catch((error) => {
+          console.warn("todos/:id Failed!", error);
+        });
+    });
+  })
+  .catch((error) => {
+    console.warn("todos/ failed!", error);
+  });
+
+let leftCol = document.getElementById("leftCol");
+leftCol.innerHTML = `<table class="table" id="mytable">
 <thead>
   <tr>
     <th scope="col">#</th>
@@ -38,32 +52,44 @@ target.innerHTML = `<table class="table" id="mytable">
 </tbody>
 </table>`;
 
+let rigthCol = document.getElementById("rigthCol");
+rigthCol.innerHTML = `<form>
+<div class="mb-3">
+  <label for="title" class="form-label">Title</label>
+  <input type="text" class="form-control" id="title" />
+</div>
+<div class="mb-3">
+  <label for="userId" class="form-label">User id</label>
+  <input type="text" class="form-control" id="userId" />
+</div>
+<div class="mb-3 form-check">
+  <input type="checkbox" class="form-check-input" id="completed" />
+  <label class="form-check-label" for="completed">Completed</label>
+</div>
+</form>`;
+
 let table = document.getElementById("mytable");
 let tbody = table.children[1];
 
 function createElem(item) {
   let elem = document.createElement("tr");
   elem.innerHTML = `<td scope="row">${item.id}</th>
-        <td>${item.title}</td>`;
-    elem.setAttributeNode(createAttr("data-id", item.id));
-    return elem;
+    <td>${item.title}</td>`;
+  elem.setAttributeNode(createAttr("data-id", item.id));
+  return elem;
 }
 
 function createAttr(name, value) {
-    var attr = document.createAttribute(name);
-    attr.value = value;
-    return attr;
-}
-
-function addItem(elemParent, elemChild) {
-  elemParent.appendChild(elemChild);
+  var attr = document.createAttribute(name);
+  attr.value = value;
+  return attr;
 }
 
 function handler(parent, callback) {
-    const rows = parent.getElementsByTagName("tr");
-    for (let i = 0; i < rows.length; i++) {
-        rows[i].onclick = function () {
-            callback(rows[i])
-        };
-    }
+  const rows = parent.getElementsByTagName("tr");
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].onclick = function () {
+      callback(rows[i]);
+    };
+  }
 }
