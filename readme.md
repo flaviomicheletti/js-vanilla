@@ -8,7 +8,6 @@ Está com saudades do JavaScript puro, sem frameworks, sem react, sem jquery, pu
 
 Eu estou.
 
-
 ### Executando
 
     npm i
@@ -17,7 +16,6 @@ Eu estou.
 Abra em seu navegador http://localhost:5000/
 
 Usando [Rollup](http://rollupjs.org/guide/en/)
-
 
 ### Veja os releases
 
@@ -28,14 +26,16 @@ Para "baixar" as tags execute:
     git fetch --all --tags
     git checkout tags/v0.0.1
 
-
 ### Habilitando CORS no Firefox
 
 Caso esteja com problema de CORS no Firefox
 
 https://gist.github.com/flaviomicheletti/62f2deb4a577b4330909d274306c498c
 
-
 ### Utilizando Bootstrap 5
 
 https://v5.getbootstrap.com/
+
+### Deployando no Heroku
+
+https://js-vanilla.herokuapp.com/

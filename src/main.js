@@ -7,6 +7,31 @@
 // const bar = require("./foo.js");
 // bar();
 
+// (async () => {
+//   try {
+//     const reponse = await fetch("https://jsonplaceholder.typicode.com/todos");
+//     const dados = await reponse.json();
+//     console.warn(dados.length);
+//   } catch (error) {
+//     console.warn("GET todos/ failed!", error);
+//   }
+// })();
+
+const todoService = {
+  getTodos: async (callback) => {
+    try {
+      const reponse = await fetch("https://jsonplaceholder.typicode.com/todos");
+      const dados = await reponse.json();
+      // console.warn(dados.length);
+      callback(dados);
+    } catch (error) {
+      console.warn("GET todos/ failed!", error);
+    }
+  },
+};
+
+window.todoService = todoService;
+
 fetch("https://jsonplaceholder.typicode.com/todos")
   .then((response) => response.json())
   .then((todos) => {
@@ -32,12 +57,12 @@ fetch("https://jsonplaceholder.typicode.com/todos")
           eCompleted.checked = todo.completed;
         })
         .catch((error) => {
-          console.warn("todos/:id Failed!", error);
+          console.warn(" GET todos/:id Failed!", error);
         });
     });
   })
   .catch((error) => {
-    console.warn("todos/ failed!", error);
+    console.warn("GET todos/ failed!", error);
   });
 
 let leftCol = document.getElementById("leftCol");
