@@ -39,3 +39,14 @@ https://v5.getbootstrap.com/
 ### Deployando no Heroku
 
 https://js-vanilla.herokuapp.com/
+
+### Aprenda
+
+Veja a [playlist](https://www.youtube.com/playlist?list=PL4-j1jp_g6DvabDe7xyBmqQC9IzvZaeVe) 
+explicando passo a passo.
+
+### Curtiu ?
+
+Não esquece de deixar uma estrelinha !
+
+![github-star](https://user-images.githubusercontent.com/1257048/94361962-61bc0480-008e-11eb-861c-30f6eae51d22.png)
