@@ -2,8 +2,6 @@
 
 # JavaScript Vanilla
 
-[JavaScript Puro](http://vanilla-js.com/).
-
 Está com saudades do JavaScript puro, sem frameworks, sem react, sem jquery, puro ?
 
 Eu estou.
@@ -40,9 +38,13 @@ https://v5.getbootstrap.com/
 
 https://js-vanilla.herokuapp.com/
 
+### Deployando no Netlify
+
+https://condescending-saha-63dbb4.netlify.app/
+
 ### Aprenda
 
-Veja a [playlist](https://www.youtube.com/playlist?list=PL4-j1jp_g6DvabDe7xyBmqQC9IzvZaeVe) 
+Veja a [playlist](https://www.youtube.com/playlist?list=PL4-j1jp_g6DvabDe7xyBmqQC9IzvZaeVe)
 explicando passo a passo.
 
 ### Curtiu ?
@@ -50,7 +52,6 @@ explicando passo a passo.
 Não esquece de deixar uma estrelinha !
 
 ![github-star](https://user-images.githubusercontent.com/1257048/94361962-61bc0480-008e-11eb-861c-30f6eae51d22.png)
-
 
 ### API
 
@@ -60,3 +61,6 @@ Teste no terminal
 
     curl -X GET -i https://jsonplaceholder.typicode.com/todos
 
+### O que significa js vanilla ?
+
+[JavaScript Puro](http://vanilla-js.com/).
