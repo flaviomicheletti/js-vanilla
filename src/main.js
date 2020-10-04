@@ -1,19 +1,18 @@
 import form from './form.js';
 import table from './table.js';
 import service from './TodoService.js';
+// service.getTodos((a) => console.log(a));
 
-// incializando a tabela
+// inicializando a coluna esquerda (table)
 let leftCol = document.getElementById('leftCol');
 leftCol.innerHTML = table.getHtml();
 
-// incializando o form
+// inicializando a coluna direita (form)
 let rigthCol = document.getElementById('rigthCol');
 rigthCol.innerHTML = form;
 
-// populando a tabela
+// on mount (?) table
 table.setTable(document.getElementById('mytable'));
-
-// service.getTodos((a) => console.log(a));
 
 service.getTodos((todos) => {
   // populando tabela
@@ -25,13 +24,9 @@ service.getTodos((todos) => {
   table.handler(table.tbody, function (item) {
     service.getTodo(item.dataset.id, (todo) => {
       // console.log(todo);
-      let eTitle = document.getElementById('title');
-      let eUserId = document.getElementById('userId');
-      let eCompleted = document.getElementById('completed');
-
-      eTitle.value = todo.title;
-      eUserId.value = todo.userId;
-      eCompleted.checked = todo.completed;
+      document.getElementById('title').value = todo.title;
+      document.getElementById('userId').value = todo.userId;
+      document.getElementById('completed').checked = todo.completed;
     });
   });
 });
