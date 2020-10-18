@@ -15,7 +15,7 @@ e assim por diante.
 
 Abra em seu navegador http://localhost:5000/
 
-![tela](https://user-images.githubusercontent.com/1257048/96356381-c84ba580-10c3-11eb-9b46-35a5b121fd57.png)
+![tela](https://user-images.githubusercontent.com/1257048/96356441-dbab4080-10c4-11eb-9381-6f859461a31c.png)
 
 Ao longo do caminho eu acabei utilizando o [Bootstrap 5](https://v5.getbootstrap.com/) e deployamos
 tanto no Heroku quanto na Netlify.
